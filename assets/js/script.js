@@ -52,83 +52,62 @@ function downloadPDF() {
     });
 }
 
-(function(){
-  const canvas = document.getElementById('dnaCanvas');
-  const ctx = canvas.getContext('2d');
-  let w = 0, h = 0, dpr = Math.max(1, window.devicePixelRatio || 1);
-  const params = {
-    amplitude: 40,
-    period: 180,
-    speed: 0.02,
-    strandGap: 120,
-    basePairEvery: 18,
-    strandWidth: 3,
-    pairWidth: 2.2
-  };
-  function resize(){
-    w = canvas.clientWidth;
-    h = canvas.clientHeight;
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  window.addEventListener('resize', resize);
-  resize();
-  let t = 0;
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    const g = ctx.createLinearGradient(0,0,w,h);
-    g.addColorStop(0, 'rgba(255,255,255,0.08)');
-    g.addColorStop(1, 'rgba(250,255,255,0.03)');
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,w,h);
-    const centerY = h/2;
-    const leftMargin = 70;
-    const rightMargin = w - 70;
-    const pointsA = [];
-    const pointsB = [];
-    for(let x = leftMargin; x <= rightMargin; x += 2){
-      const phase = (x / params.period) * Math.PI * 2 + t;
-      const yOffset = Math.sin(phase) * params.amplitude;
-      const ax = x - params.strandGap/2;
-      const ay = centerY + yOffset;
-      const bx = x + params.strandGap/2;
-      const by = centerY - yOffset;
-      pointsA.push({x: ax, y: ay, phase});
-      pointsB.push({x: bx, y: by, phase});
-    }
-    ctx.lineWidth = params.pairWidth;
-    for(let i=0;i<pointsA.length;i+=Math.round(params.basePairEvery/2)){
-      const pa = pointsA[i];
-      const pb = pointsB[i];
-      const depth = (Math.sin(pa.phase + t) + 1)/2;
-      ctx.strokeStyle = `rgba(255,209,102, ${0.35 + 0.45*depth})`;
-      ctx.beginPath();
-      ctx.moveTo(pa.x, pa.y);
-      ctx.lineTo(pb.x, pb.y);
-      ctx.stroke();
-    }
-    drawStrand(pointsB, 'rgba(26,159,177,0.95)', params.strandWidth+1);
-    drawStrand(pointsA, 'rgba(10,107,107,0.97)', params.strandWidth);
-    t += params.speed;
-    requestAnimationFrame(draw);
-  }
-  function drawStrand(points, color, width){
-    ctx.beginPath();
-    ctx.lineWidth = width;
-    ctx.strokeStyle = color;
-    for(let i=0;i<points.length;i++){
-      const p = points[i];
-      if(i===0) ctx.moveTo(p.x, p.y);
-      else{
-        const prev = points[i-1];
-        const cx = (prev.x + p.x)/2;
-        const cy = (prev.y + p.y)/2;
-        ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
+
+
+    const canvas = document.getElementById("dnaCanvas");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
       }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      let t = 0;
+      function drawDNA() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const midX = canvas.width / 2;
+        const midY = canvas.height / 2;
+        const length = 200;
+        const spacing = 10;
+
+        for (let i = -length; i < length; i += spacing) {
+          let y = midY + i;
+          let x1 = midX + Math.sin(i * 0.05 + t) * 80;
+          let x2 = midX + Math.sin(i * 0.05 + t + Math.PI) * 80;
+
+          ctx.beginPath();
+          ctx.arc(x1, y, 4, 0, Math.PI * 2);
+          ctx.fillStyle = "#689071";
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(x2, y, 4, 0, Math.PI * 2);
+          ctx.fillStyle = "#0F2A1D";
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.moveTo(x1, y);
+          ctx.lineTo(x2, y);
+          ctx.strokeStyle = "rgba(0,0,0,0.2)";
+          ctx.stroke();
+        }
+
+        t += 0.05;
+        requestAnimationFrame(drawDNA);
+      }
+      drawDNA();
     }
-    ctx.stroke();
-  }
-  resize();
-  requestAnimationFrame(draw);
-})();
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+
+document.getElementById("hamburger").addEventListener("click", () => {
+  document.getElementById("nav-links").classList.toggle("active");
+});
+
+var $easyzoom = $('.easyzoom').easyZoom();

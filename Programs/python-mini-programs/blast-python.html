@@ -5,27 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blast Using Python | Shan Shubraiz</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
-<script defer src="../../assets/js/script.js"></script>
+  <script defer src="../../assets/js/script.js"></script>
   <style>
-    .download-btn {
-      display: inline-block;
-      background: #43c59e;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 0.5em 1.2em;
-      font-size: 1em;
-      font-weight: 600;
-      margin: 1.2em auto 0 auto;
-      cursor: pointer;
-      box-shadow: 0 2px 8px #43c59e33;
-      transition: background 0.2s;
-    }
-    .download-btn:hover { background: #2193b0; }
-  
-
-    .blast-header-wrap { display: flex; align-items: center; justify-content: space-between; position: relative; }
-    @media (max-width: 600px) { .pdf-btn { right: 8px; top: 8px; font-size: 0.9em; padding: 0.4em 0.7em; } }
+  .blast-header-wrap { display: flex; align-items: center; justify-content: space-between; position: relative; }
+  @media (max-width: 600px) { .pdf-btn { right: 8px; top: 8px; font-size: 0.9em; padding: 0.4em 0.7em; } }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -74,22 +57,32 @@
   </script>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
   <nav>
-   <div class="logo">🧬 SeqRaiz</div>
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="../programs.html">Programs</a>
-            <div class="dropdown-content">
-              <a href="python-mini-programs.html">Python Mini Programs</a>
-              <a href="../Command_Line_Programs/Command_Line_Programs.html">Command Line Programs</a>
-            </div>
-        </li>
-        <li><a href="../../Blogs/blogs.html">Blogs</a></li>
-        <li><a href="../../about.html">About</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
+    <div class="logo">
+      <img src="../../images/Thumbnails/Web_logo.png" alt="Logo">
+      <span>SHUBRAIZ</span>
+    </div>
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="../programs.html">Programs</a>
+        <div class="dropdown-content">
+          <a href="python-mini-programs.html">Python Mini Programs</a>
+          <a href="../Command_Line_Programs/Command_Line_Programs.html">Command Line Programs</a>
+        </div>
+      </li>
+      <li><a href="../../Blogs/blogs.html">Blogs</a></li>
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+
+
   <!-- <search> -->
   <!-- <form action="/search" method="get"> -->
     <!-- <input name="fsrch" id="fsrch" placeholder="Search here" style="margin-top: 0.5rem; margin-left: 150%; padding: 6px 12px; width: 200px;background-color: #e3f2fd;"> -->
@@ -105,17 +98,16 @@
    </div>
   <div class="chip"> <h2>Code </h2></div>
   
-  <section style="max-width:700px;margin-top:0.5em;"> 
-     <img id="blast_code-img" src="../../images/Programs/Python Mini Programs/BLAST/BLAST_code.png" alt="Blast Python Code Snippet" style="width:100%;max-width:600px;border-radius:12px;margin:2em auto;display:block;">
-     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1em; margin-left: 65px; gap: 350px;">
-        <button class="download-btn" onclick="downloadImage('blast_code-img')">Download CodeSnap</button>
-    </div>
+  <section>   
+    <div style=" margin-top: 1em; gap: 350px;">
+      <button class="btn" onclick="downloadImage('blast_code-img')">Download CodeSnap</button>
+    </div>  
+    <img id="blast_code-img" src="../../images/Programs/Python Mini Programs/BLAST/BLAST_code.png" alt="Blast Python Code Snippet" style="width:100%;max-width:600px;border-radius:12px;margin:2em auto;display:block;"">
+  </section>
   
-</section>
-    <div class="chip">
-<h2>Description</h2></div>
-    <section style="max-width:700px;margin-top:0.5em;">
-      
+  <div class="chip">
+    <h2>Description</h2></div>
+  <section style="max-width:700px;margin-top:0.5em;">
       <p>This Python script uses Biopython to run a BLAST search against NCBI nucleotide database. By inputting a DNA sequence, the script connects to NCBI, runs BLAST, saves the results in XML format, and extracts the top 5 matches — showing the organism name, sequence length, best E-value, and accession number.<br>
       <a href="../../Blogs/BLAST_Blog.html" style="color:#2193b0;font-weight:600;text-decoration:underline;" target="_blank">Read the full blog about BLAST &rarr;</a><br>
       <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" style="color:#f44336;font-weight:600;text-decoration:underline;display:inline-block;margin-top:0.5em;">
@@ -344,18 +336,17 @@ if __name__ == "__main__":
 
 <section> 
    <p style="margin-top:0.5em; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">The output below shows the top 5 BLAST results for the provided DNA sequence, including organism name, sequence length, E-value, Scores, Identities and accession number.</p>
- <p style="margin-top:0.5em;"><b>Note:</b> Click on the pictue zoom in to get better view or you can download the image by using the button at the bottom of image.</p>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/easyzoom/2.5.0/easyzoom.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/easyzoom/2.5.0/easyzoom.js"></script>
+     <p style="margin-top:0.5em;"><b>Note:</b> Click on the pictue zoom in to get better view or you can download the image by using the button at the bottom of image.</p>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/easyzoom/2.5.0/easyzoom.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/easyzoom/2.5.0/easyzoom.js"></script>
 
-<div class="easyzoom easyzoom--overlay">
-  <a href="../../images/Programs/Python Mini Programs/BLAST/BLAST_output.png">
-    <img src="../../images/Programs/Python Mini Programs/BLAST/BLAST_output.png" alt="BLAST Output" style="width:100%;border-radius:12px;place-self:center;margin:1em auto;display:inline;"/>
-
-<button class="download-btn" onclick="downloadImage('blast_code-img')">Download Output</button></a></div>
-<script>
-  var $easyzoom = $('.easyzoom').easyZoom();
-</script>
+    <div class="easyzoom easyzoom--overlay">
+      <a href="../../images/Programs/Python Mini Programs/BLAST/BLAST_output.png">
+        <img src="../../images/Programs/Python Mini Programs/BLAST/BLAST_output.png" alt="BLAST Output" style="width:100%;border-radius:12px;place-self:center;margin:1em auto;display:inline;"/>
+          <div style=" margin-top: 1em; gap: 350px;">
+            <button class="btn" onclick="downloadImage('blast_code-img')">Download Output</button></a> 
+          </div>
+    </div>
 </section> 
 <p style="margin-top:0.5em;"><b>Note:</b> If you find any error in the code or have any suggestion please feel free to ask me on <a href="contact.html" target="_blank">contact page</a> or use following social media links to connet with me.</p>
 
@@ -386,7 +377,7 @@ if __name__ == "__main__":
       <a href="https://www.youtube.com/@shanshubraiz/featured" target="_blank" style="margin:0 10px;">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="width:32px;height:32px;vertical-align:middle;filter:invert(23%) sepia(99%) saturate(7499%) hue-rotate(357deg) brightness(98%) contrast(92%);">
       </a>
-      <div style="margin-top:0.5rem; color:#555; font-size:1rem;">Follow me on social media and subscribe to my YouTube channel!</div>
+      <div style="margin-top:0.5rem; color:#87d111; font-size:1rem;">Follow me on social media and subscribe to my YouTube channel!</div>
     </div>
     <p>&copy; 2025 Shan Shubraiz</p>
   </footer>

@@ -8,23 +8,31 @@
 <script defer src="assets/js/script.js"></script>
 </head>
 <body>
+  <!-- NAVIGATION -->
   <nav>
-  <div class="logo">🧬 SeqRaiz</div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    
-    <li class="dropdown">
-      <a href="Programs\programs.html">Programs</a>
+    <div class="logo">
+      <img src="images/Thumbnails/Web_logo.png" alt="Logo">
+      <span>SHUBRAIZ</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="Programs/programs.html">Programs</a>
         <div class="dropdown-content">
-          <a href="Programs\python-mini-programs\python-mini-programs.html">Python Mini Programs</a>
-          <a href="Programs\Command_Line_Programs\Command_Line_Programs.html">Command Line Programs</a>
+          <a href="Programs/python-mini-programs/python-mini-programs.html">Python Mini Programs</a>
+          <a href="Programs/Command_Line_Programs/Command_Line_Programs.html">Command Line Programs</a>
         </div>
-    </li>
-    <li><a href="Blogs\blogs.html">Blogs</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+      </li>
+      <li><a href="Blogs/blogs.html">Blogs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+
   <!-- <search> -->
   <!-- <form action="/search" method="get"> -->
     <!-- <input name="fsrch" id="fsrch" placeholder="Search here" style="margin-top: 0.5rem; margin-left: 150%; padding: 6px 12px; width: 200px;background-color: #e3f2fd;"> -->
@@ -55,12 +63,12 @@
         <img src="images\Thumbnails\shubraiz.jpeg" alt="Shan Shubraiz" style="width:160px;height:160px;object-fit:cover;border-radius:50%;box-shadow:0 2px 12px #007acc33;">
       </div>
       <div style="text-align:center;margin-bottom:1.5rem;">
-        <button id="resumeRequestBtn" style="background:#007acc;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;font-size:1rem;cursor:pointer;">Request My Resume/CV</button>
+        <button class="btn">Request My Resume/CV</button>
       </div>
       <!-- Modal for Resume Request -->
       <div id="resumeModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.35);align-items:center;justify-content:center;">
         <div style="background:#fff;padding:2rem 1.5rem;border-radius:10px;max-width:340px;width:90vw;box-shadow:0 2px 16px #007acc33;position:relative;text-align:center;">
-          <button onclick="document.getElementById('resumeModal').style.display='none'" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#888;">&times;</button>
+          <button class="btn"onclick="document.getElementById('resumeModal').style.display='none'" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#888;">&times;</button>
           <h3 style="margin-bottom:1.2rem;">How would you like to receive my Resume/CV?</h3>
           <a href="mailto:shubraizshan@gmail.com?subject=Request%20for%20Resume%2FCV" style="display:inline-block;margin:0.5rem 0.5rem 0.5rem 0;text-decoration:none;">
             <button style="background:#007acc;color:#fff;padding:0.6rem 1.2rem;border:none;border-radius:6px;font-size:1rem;cursor:pointer;">Email</button>
@@ -87,7 +95,7 @@
         });
       </script>
       <div style="text-align:center;font-size:1.08rem;">
-        Interested in knowing more? Feel free to <a href="contact.html" style="color:#007acc;text-decoration:underline;">connect with me</a> for research collaborations, freelance projects, or knowledge-sharing.
+        Interested in knowing more? Feel free to <a href="contact.html" style="color:#00cc2c;text-decoration:underline;">connect with me</a> for research collaborations, freelance projects, or knowledge-sharing.
       </div>
     </div>
   </main>
@@ -108,7 +116,7 @@
       <a href="https://www.youtube.com/@shanshubraiz/featured" target="_blank" style="margin:0 10px;">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="width:32px;height:32px;vertical-align:middle;filter:invert(23%) sepia(99%) saturate(7499%) hue-rotate(357deg) brightness(98%) contrast(92%);">
       </a>
-      <div style="margin-top:0.5rem; color:#555; font-size:1rem;">Follow me on social media and subscribe to my YouTube channel!</div>
+      <div style="margin-top:0.5rem; color:#87d111; font-size:1rem;">Follow me on social media and subscribe to my YouTube channel!</div>
     </div>
     <p>&copy; 2025 Shan Shubraiz</p>
   </footer>
