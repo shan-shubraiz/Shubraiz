@@ -303,23 +303,6 @@ section {
   box-shadow: 0 12px 30px rgba(15, 42, 29, 0.25); 
   border: 1px solid rgba(15, 42, 29, 0.4);        
 }
-/*  */
-
-/* .project-card .btn { */
-  /* display: inline-block; */
-  /* background: linear-gradient(90deg, var(--secondary), var(--accent)); */
-  /* color: #fff; */
-  /* border: none; */
-  /* padding: 10px 20px; */
-  /* border-radius: 25px; */
-  /* font-size: 0.95rem; */
-  /* cursor: pointer; */
-  /* text-decoration: none; */
-  /* transition: background 0.5s ease; */
-/* } */
-/*  */
-/* .project-card .btn:hover { */
-  /* background: linear-gradient(270deg, var(--secondary), var(--accent)); */
 /* } */
 
 /* small screens: single column stack */
@@ -469,6 +452,12 @@ form button:hover { background: var(--dark); }
   section, main { padding: 1.5rem; }
   .project-list { gap: 0.8rem; }
   nav ul { gap: 1rem; }
+}
+@media (max-width: 500px) {
+  nav .logo {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -657,4 +646,69 @@ footer .social-links a img:hover {
   transform: translateY(-6px) scale(1.03); 
   box-shadow: 0 12px 30px rgba(15, 42, 29, 0.25); 
   border: 1px solid rgba(15, 42, 29, 0.4);        
+}
+.responsive-heading {
+  font-size: clamp(1rem, 5vw, 2.5rem); /* min 1rem, max 2.5rem, scales with viewport */
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  word-wrap: break-word; /* allow text to wrap on very small screens */
+}
+
+
+/* Wrapper makes table scrollable on small screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* Table style */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* ensures readability on larger screens */
+  font-family: Arial, sans-serif;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.responsive-table thead th {
+  background-color: #447744;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.responsive-table tbody th {
+  background-color: #71a66a;
+  color: #fff;
+  text-align: center;
+}
+
+.responsive-table tbody tr:nth-child(even) {
+  background-color: #d9ead3;
+}
+
+.responsive-table tbody tr:nth-child(odd) {
+  background-color: #f0f8f0;
+}
+
+/* Hover effect */
+.responsive-table tbody tr:hover {
+  background-color: #c5e1a5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .responsive-table th,
+  .responsive-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
 }

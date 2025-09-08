@@ -39,11 +39,13 @@
   <!-- </form> -->
 <!-- </search>   -->
 <main>
-      
-   <h1 style="text-align:center; margin-bottom:1.5rem; font-size:3.0rem; background-color: rgb(236, 248, 236); border:2.5px solid rgb(71, 120, 66); color: #004d40;">
-      INTRODUCTION TO BLAST <br>
-         <bdi style="text-align:center; margin-bottom:1.5rem; font-size:1.5rem; background-color: rgb(236, 248, 248); color: #004d40;">A BEGINNER'S GUIDE</bdi>
-   </h1>
+
+<h1 class="responsive-heading" style="background-color: rgb(236, 248, 236); border:2.5px solid rgb(71, 120, 66); color: #004d40;">
+   INTRODUCTION TO BLAST <br>
+   <bdi style="display:block; background-color: rgb(236, 248, 248); color: #004d40;">A BEGINNER'S GUIDE</bdi>
+</h1>
+
+
    <p style="margin: 6px 0 0;" id="date" align="right" > <b>Published on: August 26, 2025</b></p><hr><br>
       <p style="text-align: justify; text-indent: 70px;" >  Have you ever noticed, whenever we see something new, our mind compares it with something. Just because it has no
                name for that thing, so it compares and anticipate that it looks like this or
@@ -121,68 +123,54 @@
          <p>
             Depending  on the type of sequence you're working with, BLAST offers several versions:
          </p>
+<h1>BLAST Table</h1>
 
-         <div align="center">
-  <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
-
-    <!-- Table Header -->
-    <tr style="background-color: #447744; color: white; text-align: center; font-weight: bold; font-size: 1rem;">
-      <th style="padding: 10px; border: 1px solid #ddd;">Type</th>
-      <th style="padding: 10px; border: 1px solid #ddd;">Query vs Database</th>
-      <th style="padding: 10px; border: 1px solid #ddd;">Functions (default in bold)</th>
-    </tr>
-
-    <!-- BLASTn -->
-    <tr style="background-color: #d9ead3; border: 1px solid #ddd;">
-      <th style="padding: 8px; text-align: center; background-color: #71a66a; color: white;">blastn (Nucleotide BLAST)</th>
-      <td style="padding: 8px;">Nucleotide vs Nucleotide</td>
-      <td style="padding: 8px;">
-        <b>Megablast:</b> sequence identification, intra-species comparison<br>
-        Discontiguous megablast: cross-species comparison, searching with coding sequences<br>
-        blastn: searching with shorter queries, cross-species comparison
-      </td>
-    </tr>
-
-    <!-- BLASTp -->
-    <tr style="background-color: #f0f8f0; border: 1px solid #ddd;">
-      <th style="padding: 8px; text-align: center; background-color: #71a66a; color: white;">blastp (Protein BLAST)</th>
-      <td style="padding: 8px;">Protein vs Protein</td>
-      <td style="padding: 8px;">
-        <b>blastp:</b> general sequence identification and similarity searches<br>
-        Quick BLASTP: with a k-mer match to accelerate search speed for very similar proteins<br>
-        DELTA-BLAST: protein similarity search with higher sensitivity than blastp<br>
-        PSI-BLAST: iterative search using PSSM to identify distant relatives in a protein family<br>
-        PHI-BLAST: protein alignment with input pattern as anchor/constraint
-      </td>
-    </tr>
-
-    <!-- BLASTx -->
-    <tr style="background-color: #d9ead3; border: 1px solid #ddd;">
-      <th style="padding: 8px; text-align: center; background-color: #71a66a; color: white;">blastx</th>
-      <td style="padding: 8px;">Nucleotide (translated) vs Protein</td>
-      <td style="padding: 8px;">
-        <b>blastx:</b> identifying potential protein products encoded by a nucleotide query
-      </td>
-    </tr>
-
-    <!-- tBLASTn -->
-    <tr style="background-color: #f0f8f0; border: 1px solid #ddd;">
-      <th style="padding: 8px; text-align: center; background-color: #71a66a; color: white;">tblastn</th>
-      <td style="padding: 8px;">Protein vs Nucleotide (translated)</td>
-      <td style="padding: 8px;">
-        <b>tblastn:</b> identifying database sequences encoding proteins similar to the query
-      </td>
-    </tr>
-
-    <!-- tBLASTx -->
-    <tr style="background-color: #d9ead3; border: 1px solid #ddd;">
-      <th style="padding: 8px; text-align: center; background-color: #71a66a; color: white;">tblastx</th>
-      <td style="padding: 8px;">Nucleotide (translated) vs Nucleotide (translated)</td>
-      <td style="padding: 8px;">
-        <b>tblastx:</b> identifying nucleotide sequences similar to the query based on coding potential
-      </td>
-    </tr>
-
+<div class="table-wrapper">
+  <table class="responsive-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Query vs Database</th>
+        <th>Functions (default in bold)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>blastn (Nucleotide BLAST)</th>
+        <td>Nucleotide vs Nucleotide</td>
+        <td>
+          <b>Megablast:</b> sequence identification, intra-species comparison<br>
+          Discontiguous megablast: cross-species comparison, searching with coding sequences<br>
+          blastn: searching with shorter queries, cross-species comparison
+        </td>
+      </tr>
+      <tr>
+        <th>blastp (Protein BLAST)</th>
+        <td>Protein vs Protein</td>
+        <td>
+          <b>blastp:</b> general sequence identification and similarity searches<br>
+          Quick BLASTP: with a k-mer match to accelerate search speed for very similar proteins<br>
+          DELTA-BLAST: protein similarity search with higher sensitivity than blastp<br>
+          PSI-BLAST: iterative search using PSSM to identify distant relatives in a protein family<br>
+          PHI-BLAST: protein alignment with input pattern as anchor/constraint
+        </td>
+      </tr>
+      <tr>
+        <th>blastx</th>
+        <td>Nucleotide (translated) vs Protein</td>
+        <td><b>blastx:</b> identifying potential protein products encoded by a nucleotide query</td>
+      </tr>
+      <tr>
+        <th>tblastn</th>
+        <td>Protein vs Nucleotide (translated)</td>
+        <td><b>tblastn:</b> identifying database sequences encoding proteins similar to the query</td>
+      </tr>
+      <tr>
+        <th>tblastx</th>
+        <td>Nucleotide (translated) vs Nucleotide (translated)</td>
+        <td><b>tblastx:</b> identifying nucleotide sequences similar to the query based on coding potential</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
