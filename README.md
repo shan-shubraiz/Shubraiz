@@ -39,4 +39,5 @@ This website is hosted on **GitHub Pages**.
 ## How to Use / Update
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/my-website.git
+   git clone https://github.com/shan-shubraiz/Shubraiz
+
