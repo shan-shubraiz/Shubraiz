@@ -111,3 +111,7 @@ document.getElementById("hamburger").addEventListener("click", () => {
 });
 
 var $easyzoom = $('.easyzoom').easyZoom();
+
+document.getElementById("emailBtn").onclick = function() {
+  window.location.href = "mailto:shubraizshan@gmail.com?subject=Request%20for%20Resume%2FCV";
+};
