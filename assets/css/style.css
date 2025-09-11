@@ -203,7 +203,7 @@ canvas {
 .btn {
   display: inline-block;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
-  color: #fff;
+  color: #e6fde6;
   border: none;
   padding: 10px 20px;
   border-radius: 25px;
@@ -219,6 +219,7 @@ canvas {
 .btn:hover {
   background: linear-gradient(270deg, var(--primary), var(--pale));
   transform: translateY(-2px);
+  color:#0F2A1D;
 }
 
 /* Active / click effect */
@@ -226,8 +227,24 @@ canvas {
   transform: translateY(0);
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
-
-
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap:100px;
+}
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .button-container .btn {
+    text-align: center;
+    width: 100%;
+  }
+}
 .copy-btn {
   position: relative;
   margin: 8px 12px 3px 500px;
@@ -395,7 +412,6 @@ section {
   font-size: 0.93em;
 }
 .explanation strong { color: var(--medium); }
-
 /* ==============================
    FORMS
    ============================== */
