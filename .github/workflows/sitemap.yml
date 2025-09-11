@@ -1,0 +1,39 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main   # or master, depending on your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Sitemap Generator
+        run: npm install -g sitemap-generator-cli
+
+      - name: Generate Sitemap
+        run: |
+          mkdir -p ./public
+          sitemap-generator https://shan-shubraiz.github.io/Shubraiz/ \
+            --max-depth 0 \
+            --last-mod \
+            --filepath ./sitemap.xml \
+            --exclude /404.html
+
+      - name: Commit & Push sitemap.xml
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap"
+          git push
