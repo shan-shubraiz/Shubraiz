@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Shan Shubraiz, bioinformatics student, python, and tutor. Includes projects, research, and blogs.">
+  <meta name="keywords" content="Shan Shubraiz, Bioinformatics, Python, Tutor, Research, GitHub Pages, Blogs">
+  <meta name="author" content="Shan Shubraiz">
+  <meta name="robots" content="index, follow">
+  <title>BLAST | Shan Shubraiz</title>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FWTGYR696S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FWTGYR696S');
+</script>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/script.js"></script>
+</head>
+<body>
+
+
+<!-- NAVIGATION -->
+<nav>
+   <a href="../index.html">
+  <div class="logo">
+    <img src="../images/Thumbnails/Web_logo.png" alt="Logo">
+    <span>SHUBRAIZ</span>
+  </div></a>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="../Programs/programs.html">Programs</a>
+      <div class="dropdown-content">
+        <a href="../Programs/python-mini-programs/python-mini-programs.html">Python Mini Programs</a>
+        <a href="../Programs/Command_Line_Programs/Command_Line_Programs.html">Command Line Programs</a>
+      </div>
+    </li>
+    <li><a href="../Blogs/blogs.html">Blogs</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+  <!-- <form action="/search" method="get"> -->
+    <!-- <input name="fsrch" id="fsrch" placeholder="Search here" style="margin-top: 0.5rem; margin-left: 150%; padding: 6px 12px; width: 200px;background-color: #e3f2fd;"> -->
+  <!-- </form> -->
+<!-- </search>   -->
+<main>
+
+<h1 class="responsive-heading" style="background-color: rgb(236, 248, 236); border:2.5px solid rgb(71, 120, 66); color: #004d40;">
+   INTRODUCTION TO BIOINFORMATICS <br>
+   <bdi style="display:block; background-color: rgb(236, 248, 248); color: #004d40;">A BEGINNER'S GUIDE</bdi>
+</h1>
+
+
+   <p style="margin: 6px 0 0;" id="date" align="right" > <b>Published on: September 13, 2025</b></p><hr><br>
+      <p style="text-align: justify; text-indent: 70px;" >  
+      In the mid-20th century, two revolutions were unfolding in parallel. On one side, scientists were racing to 
+      uncover the secret of life hidden within our cells and they get a major breakthrough when Rosalind Franklin’s 
+      X-ray diffraction images revealed the hidden structure of DNA, enabling Watson and Crick to propose the double 
+      helix in 1953. This discovery changed biology forever. showing that a simple code of four bases carries the 
+      blueprint of every organism. But this was the dawn of a new era. Then scientists started making efforts to read 
+      these codes. Soon after, Frederick Sanger’s sequencing methods (1977) gave scientists the ability to read the 
+      code of life itself, and decades later, the Human Genome Project (1990–2003) pushed this ambition to a global scale, 
+      mapping all 3 billion bases of human DNA.
+<div class="image-grid">
+  <div class="image-item">
+    <img src="../images/Bioinformatics_Blog/Rosalind_X-ray.jpeg" alt="Rosalind X-ray ">
+    <p class="caption">Rosalind Franklin X-ray Crystallography Image</p>
+  </div>
+  <div class="image-item">
+    <img src="../images/Bioinformatics_Blog/Double_helix.jpeg" alt="DNA Double helix">
+    <p class="caption">Watson and Crick Double Helix Model</p>
+  </div>
+</div></p><br><br>
+<p style="text-align: justify; text-indent: 70px;" >  
+      Meanwhile, in the world of machines, computers were rapidly evolving. All the way from Alan Turing’s early theories 
+      of computation (1930s–40s) to the rise of mainframes and supercomputers in the 1960s and 70s, and followed by the 
+      development of advanced algorithms and data storage systems. As biology began producing mountains of genetic and 
+      protein data, scientists realized that traditional lab notebooks were no longer enough. The challenge of handling 
+      this vast information was beyond the walls of biological laboratory.  This was the time when eyes of biological world 
+      turned towards the power of computation.
+<div class="image-grid">    
+   <div class="image-item"">
+   <img src="../images/Bioinformatics_Blog/Turing.jpeg" alt="Universal Turing Machine">
+   <p class="caption">Universal Turing Machine</p>
+    </div>           
+   <div class="image-item"">
+     <img src="../images/Bioinformatics_Blog/Supercomputer.jpg" alt="Supercomputer">
+     <p class="caption">Modern Supercomputers</p>
+   </div>     
+</div>   </p><br><br> 
+<p style="text-align: justify; text-indent: 70px;" >    
+   When these two opposite streams — Nature made machines decoding life and man-made machines’ computational power, intersected,
+   a new field was born: bioinformatics. It became the bridge between biology and computing, transforming raw sequences into 
+   knowledge, and enabling breakthroughs in medicine, agriculture, and biotechnology.                   
+      </p>
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+      <b><u>What is Bioinformatics?</u></b>
+   </h4>
+      <p style="text-align: justify;">
+         “Bioinformatics is an interdisciplinary science that combines <b>biology, computer science, mathematics,</b> and <b>statistics </b>
+         to analyse and interpret biological data.” 
+      </p>
+         <p style="text-align: justify;">
+            It provides the tools and methods necessary to handle the massive data produced by modern biological research, 
+            such as DNA sequencing, protein analysis, and large-scale clinical studies.
+               In simpler terms, bioinformatics answers questions like:
+               <ul style="font-size:1.08rem;line-height:1.7;margin-bottom:1.5rem; margin-left: 1.5cm;">
+              <li> 	What does this DNA sequence mean?</li>
+               <li>How do proteins fold and interact?</li>
+              <li> Which genes are linked to a particular disease?</li>
+               <li>Can we predict how a patient will respond to a drug?</li>
+               </ul>
+
+         </p>
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+      <b><u>Why is Bioinformatics Important?</u></b>
+   </h4>
+         <p style="text-align: justify;">
+               Biology has shifted from being a “data-poor” to a data-rich science. With technologies like Next-Generation 
+               Sequencing (NGS), researchers can sequence an entire human genome in just a few days, generating terabytes of data. 
+               Bioinformatics turns this raw data into biological knowledge.<br>
+               For example:
+               
+         </p>
+         <ul style='margin-top:0cm; margin-left: 1cm;' type=disc>
+            <li>
+               	In COVID-19 research, bioinformatics was used to track viral mutations worldwide.
+            </li>
+            <li>
+               	In cancer genomics, it helps identify mutations in tumor cells and guides personalized therapies.
+            </li>
+            <li>
+               	In agriculture, bioinformatics improves crop yield and disease resistance by studying plant genomes.
+            </li>
+         </ul>
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+      <b><u>Goals of Bioinformatics</u></b>
+   </h4>
+      <ol style='margin-top:0cm; margin-left: 1cm; ' type=disc>
+         <li style="font-weight: bold;">
+            Data Storage & Retrieval – </li>
+         <p style="text-align: justify; text-indent: 50px;">
+            Managing large biological databases (e.g., GenBank, UniProt).</p>
+         <li style="font-weight: bold;">
+            Sequence Analysis – </li>
+         <p style="text-align: justify; text-indent: 50px;">
+            Comparing DNA/protein sequences to identify functions and evolutionary relationships.</p>
+         <li style="font-weight: bold;">
+            Structure Prediction – </li>
+         <p style="text-align: justify; text-indent: 50px;">
+            Modeling 3D structures of proteins and RNAs.</p>
+         <li style="font-weight: bold;">
+            Systems-Level Understanding – </li>
+         <p style="text-align: justify; text-indent: 50px;">
+            Studying networks of genes and proteins in pathways.</p>
+         <li style="font-weight: bold;">
+            Translational Applications – </li>
+         <p style="text-align: justify; text-indent: 50px;">
+            Applying insights to medicine, drug discovery, and biotechnology.</p>
+      </ol>
+   
+   
+   
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+      <b><u>Core Applications of Bioinformatics</u></b>
+   </h4>
+   <ol  style='margin-top:0cm; margin-left: 1cm;'>
+      <li>
+         <b><u>Sequence Analysis (Genomics)</u></b>
+            <ul style="margin-left: 1cm;">
+               <li><b>What it is:</b> Comparing DNA, RNA, or protein sequences.</li>
+               <li><b>Why it matters:</b> Identifies mutations, evolutionary relationships, and conserved functional regions.
+               <li><b>Methods & Tools:</b>
+                  <ul style='margin-top:0cm; margin-left: 0.75cm;' type=square>
+                     <li>BLAST – Compare a query sequence to known databases.</li>
+                     <li>Clustal Omega, MUSCLE – Multiple sequence alignment.</li>
+                     <li>Gene Prediction Tools – AUGUSTUS, GENSCAN.</li></ul></li>
+               <li><b>Example:</b> Detecting mutations in the BRCA1 gene linked to breast cancer risk.</li>
+            </ul>
+      </li>
+      <li>
+         <b><u>Functional Genomics (Transcriptomics)</u></b>
+            <ul style="margin-left: 1cm;">
+               <li><b>Goal:</b> Understand how genes and proteins function in biological systems.</li>
+               <li><b>Why it matters:</b> Links genetic variations to diseases and traits.  </li>
+               <li><b>Techniques:</b>
+               <ul style='margin-top:0cm; margin-left: 0.75cm;' type=square>
+                  <li>RNA-Seq – Measures gene expression levels.</li>
+                  <li>ChIP-Seq – Studies DNA-protein interactions.</li>
+                  <li>ATAC-Seq – Identifies open chromatin regions.</li></ul></li>
+               <li><b>Projects:</b>
+               <ul style='margin-top:0cm; margin-left: 0.75cm;' type=square>
+                 <li>ENCODE – Cataloging functional elements in the human genome.</li>
+                 <li>GTEx – Mapping tissue-specific gene expression.</li>
+               <li><b>Applications:</b> Understanding diseases like diabetes or Alzheimer’s by identifying dysregulated genes.</li>
+            </ul>
+            </li>
+           </ul> 
+      </li>
+      <li >
+   <b><u>Structural Bioinformatics (Proteomics)</u></b>
+   <ul style="margin-left: 1cm;">
+      <li><b>What it studies:</b> 3D shapes of proteins and nucleic acids.</li>
+      <li><b>Importance:</b> Structure determines biological function.</li>
+      <li><b>Tools & Databases:</b>
+         <ul style='margin-top:0cm; margin-left: 0.75cm;' type=square>
+            <li>PDB (Protein Data Bank) – Repository of 3D structures.</li>
+            <li>SWISS-MODEL, AlphaFold2 – Structure prediction.</li>
+            <li>AutoDock – Drug-protein docking simulations.</li>
+         </ul>
+      </li>
+      <li><b>Example:</b> Predicting the 3D structure of the SARS-CoV-2 spike protein, aiding vaccine design.</li>
+   </ul>
+</li>
+
+<li >
+   <b><u>Drug Discovery and Pharmacogenomics</u></b>
+   <ul style="margin-left: 1cm;">
+      <li><b>How bioinformatics helps:</b>
+         <ul style='margin-top:0cm; margin-left: 0.75cm;' type=square>
+            <li>Identifies drug targets (proteins/genes involved in disease).</li>
+            <li>Simulates drug binding to proteins.</li>
+            <li>Studies how genetic variations affect drug response.</li>
+         </ul>
+      </li>
+      <li><b>Databases:</b> DrugBank, PubChem, ChEMBL.</li>
+      <li><b>Case Study:</b> Development of Gleevec (imatinib) for leukemia by targeting specific mutated kinases.</li>
+   </ul>
+</li>
+
+<li>
+   <b><u>Systems Biology & Metabolomics</u></b>
+   <ul style="margin-left: 1cm;">
+      <li><b>Focus:</b> Entire networks rather than single molecules.</li>
+      <li><b>Methods:</b>
+         <ul style='margin-top:0cm; margin-left: 0.75cm;' type=square>
+            <li>Metabolic pathway modeling (KEGG, BioCyc).</li>
+            <li>Protein-protein interaction networks (STRING).</li>
+            <li>Gene regulatory networks.</li>
+         </ul>
+      </li>
+      <li><b>Goal:</b> Predict cell behavior under different conditions.</li>
+      <li><b>Example:</b> Modeling cancer signaling pathways to identify new therapeutic targets.</li>
+      <li><b>Metabolomics:</b> Profiling small molecules in cells and tissues to study metabolic pathways, often integrated with systems biology for a complete picture.</li>
+   </ul>
+</li>
+
+<li>
+   <b><u>Phylogenetics</u></b>
+   <ul style="margin-left: 1cm;">
+      <li><b>What it is:</b> Reconstructing evolutionary relationships among species using genetic data.</li>
+      <li><b>Tools:</b> MEGA, PhyML, BEAST.</li>
+      <li><b>Applications:</b> Understanding species evolution, tracking viral outbreaks, and studying gene family evolution.</li>
+   </ul>
+</li>
+ </ol>
+         <br>
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+            <b><u>Emerging Frontiers in Bioinformatics</u></b>
+   </h4>
+      <p style="text-align: justify;">
+         As technology advances, new frontiers in bioinformatics are emerging:
+      </p>
+         <ul style='margin-top:0cm; margin-left: 1cm;' type=disc>
+            <li>
+               <b>Single-Cell Genomics:</b> Analyzing gene expression at the single-cell level to understand cellular heterogeneity.
+            </li>
+            <li>
+               <b>Multi-Omics Integration:</b> Combining genomics, transcriptomics, proteomics, and metabolomics data for a holistic view of biological systems.
+            </li>
+            <li>
+               <b>AI and Machine Learning:</b> Using advanced algorithms to predict protein structures (e.g., AlphaFold2), analyze medical images, and discover new drugs.
+            </li>
+            <li>
+               <b>Cloud Computing & Big Data:</b> Leveraging cloud platforms to store and analyze massive biological datasets efficiently.
+            </li>
+         </ul>
+
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+      <b><u>Bioinformatics Workflow </u></b>
+   </h4>
+      <p style="text-align: justify;">
+         A typical bioinformatics workflow involves several key steps:
+      </p>
+         <ol style='margin-top:0cm; margin-left: 1cm; ' type=disc>
+            <li style="font-weight: bold;">
+               Collecting Raw Biological Data – </li>
+            <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type=square>
+              <li> DNA sequencing data (e.g., FASTQ files from Illumina, Oxford Nanopore)</li>
+               <li>Protein sequences (from experiments or mass spectrometry)</li>
+               <li> Gene expression data (microarrays, RNA-Seq)</li>
+               <li>RNA-Seq data (gene expression levels)</li>
+               <li>Metabolomics & proteomics data (chemical compounds, proteins)</li>
+               <li>Medical imaging (X-rays, MRI, pathology slides)</li></ul>
+            <li style="font-weight: bold;">
+                  Preprocessing – </li>
+         <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="square">
+            <li>Quality control (remove low-quality reads, adapters) → tools: FastQC, Trimmomatic</li>
+            <li>Filtering & trimming (eliminate contamination, duplicates)</li>
+            <li>Error correction (fix sequencing errors)</li>
+            <li>Normalization (for gene expression / RNA-seq data)</li>
+            <li>Feature extraction (convert raw signals/images into usable biological features)</li>
+         </ul>
+
+         <li style="font-weight: bold;">
+            Storage in Databases – </li>
+         <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="square">
+            <li>Primary sequence databases → GenBank, ENA, DDBJ</li>
+            <li>Protein databases → UniProt, PDB (structures)</li>
+            <li>Functional databases → KEGG (pathways), Reactome</li>
+            <li>Specialized databases → dbSNP (mutations), GEO (gene expression)</li>
+            <li>Big data storage → Cloud platforms (NCBI SRA, EMBL-EBI, AWS cloud genomics)</li>
+         </ul>
+
+         <li style="font-weight: bold;">
+            Analysis – </li>
+         <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="square">
+            <li>Sequence Alignment
+                <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="circle">
+                    <li>Pairwise alignment → BLAST, FASTA</li>
+                    <li>Multiple sequence alignment → Clustal Omega, MUSCLE</li>
+                    <li>Phylogenetic trees → MEGA, PhyML</li>
+                </ul>
+            </li>
+            <li>Modeling
+                <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="circle">
+                    <li>Protein structure prediction → AlphaFold, SWISS-MODEL</li>
+                    <li>Molecular docking → AutoDock, PyRx</li>
+                    <li>Systems modeling → COPASI, CellDesigner</li>
+                </ul>
+            </li>
+            <li>Networks
+                <ul  style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="circle">
+                    <li>Gene regulatory networks</li>
+                    <li>Protein-protein interaction networks → STRING, Cytoscape</li>
+                    <li>Metabolic & signaling pathway modeling</li>
+                </ul>
+            </li>
+         </ul>
+
+         <li style="font-weight: bold;">
+             Interpretation – </li>
+         <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="square">
+             <li>Detect mutations / SNPs linked to diseases</li>
+             <li>Find biomarkers from gene expression</li>
+             <li>Map genes/proteins to biological pathways</li>
+             <li>Compare with known databases for clinical relevance</li>
+             <li>Apply machine learning models for classification/prediction</li>
+         </ul>
+
+         <li style="font-weight: bold;">
+             Biological Insight – </li>
+         <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="square">
+             <li>Diagnostics → Early detection of cancer, genetic diseases</li>
+             <li>Therapies → Personalized medicine, drug discovery</li>
+             <li>Knowledge → Understanding evolution, systems biology, functional genomics</li>
+             <li>Decision-making → Guiding clinical and research experiments</li>
+         </ul>
+
+   </ol>
+      <div>
+        <img id="blast_output-img" src="../images/Bioinformatics_Blog/Bioinformatics_Workflow.png" alt="Bioinformatics Workflow" style="width:100%;border-radius:12px;place-self:center;margin:1em auto;display:inline;"> 
+      </div>
+   <h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+      <b><u>Careers in Bioinformatics:</u></b>
+   </h4>
+      <li style="font-weight: bold;">
+          Key Roles – </li>
+      <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="circle">
+          <li>Bioinformatics Scientist/Researcher – Builds new algorithms and pipelines.</li>
+          <li>Bioinformatics Analyst – Processes NGS or proteomics datasets.</li>
+          <li>Computational Biologist – Creates predictive models of systems.</li>
+          <li>Software Developer – Designs bioinformatics software tools.</li>
+          <li>Clinical Bioinformatician – Works in hospitals, analyzing patient genomes.</li>
+      </ul>
+
+      <li style="font-weight: bold;">
+          Skills Needed – </li>
+      <ul style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;" type="square">
+          <li>Programming: Python, R, Perl, C++.</li>
+          <li>Databases: SQL, NoSQL, biological repositories.</li>
+          <li>Machine Learning & Statistics.</li>
+          <li>Biological Knowledge: Molecular biology, genetics, genomics.</li>
+          <li>Platforms: Linux/Unix, cloud computing (AWS, Google Cloud).</li>
+      </ul>
+<h4 style="text-align: left; margin: 1rem 0; color: #010f03; font-size: 1.5em; font-family:'Courier New', Courier, monospace ;">
+   <b><u>Conclusion:</u></b>
+</h4>
+   <p style="text-align: justify; text-indent: 3%">
+      Bioinformatics is the backbone of modern biology and medicine. It transforms massive data into discoveries—whether it’s mapping the human genome, predicting drug responses, or modelling entire cellular systems.
+For a newcomer, bioinformatics offers:
+<ul  style="text-align: justify; text-indent: 5px; margin-top:0cm; margin-left: 1cm;">
+	<li>A solid career path across academia, pharma, biotech, and healthcare.</li>
+	<li>Opportunities to work on real-world problems like cancer, genetic disorders, and pandemics.</li>
+	<li>A future-proof skill set, blending coding with biology.</li>
+</ul><br>
+As biological data keeps growing, bioinformatics will continue to revolutionize genomics, healthcare, agriculture, and biotechnology, making it one of the most powerful fields of the 21st century.
+</p>
+
+     
+            <p class="fun-note">
+               <span class="star left">🧬</span>
+               <span class="text">Decode, Discover, Deliver!</span>
+               <span class="star right">🧬</span>
+            </p>
+         </div>
+      </main>
+ <footer>
+   <div class="social-links" style="margin-bottom:1rem; text-align:center;">
+     <a href="https://www.linkedin.com/in/muhammad-shan-shubraiz-370873106/" target="_blank" style="margin:0 10px;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:32px;height:32px;vertical-align:middle;filter:invert(36%) sepia(99%) saturate(747%) hue-rotate(176deg) brightness(92%) contrast(92%);">
+     </a>
+     <a href="https://www.facebook.com/profile.php?id=61557894315656" target="_blank" style="margin:0 10px;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:32px;height:32px;vertical-align:middle;filter:invert(27%) sepia(99%) saturate(749%) hue-rotate(175deg) brightness(98%) contrast(92%);">
+     </a>
+     <a href="https://www.instagram.com/shan_shubraiz/" target="_blank" style="margin:0 10px;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:32px;height:32px;vertical-align:middle;filter:invert(23%) sepia(99%) saturate(7499%) hue-rotate(357deg) brightness(98%) contrast(92%);">
+     </a>
+     <a href="https://www.fiverr.com/shan_shubraiz" target="_blank" style="margin:0 10px;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/fiverr.svg" alt="Fiverr" style="width:32px;height:32px;vertical-align:middle;filter:invert(48%) sepia(99%) saturate(749%) hue-rotate(95deg) brightness(98%) contrast(92%);">
+     </a>
+     <a href="https://www.youtube.com/@shanshubraiz/featured" target="_blank" style="margin:0 10px;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="width:32px;height:32px;vertical-align:middle;filter:invert(23%) sepia(99%) saturate(7499%) hue-rotate(357deg) brightness(98%) contrast(92%);">
+     </a>
+     <div style="margin-top:0.5rem; font-size:1rem;">Follow me on social media and subscribe to my YouTube channel!</div>
+   </div>
+   <p>&copy; 2025 Shan Shubraiz</p>
+   <a href="privacy.html">Privacy Policy</a> | 
+  <a href="disclaimer.html">Disclaimer</a> | 
+  <a href="terms.html">Terms & Conditions</a>
+ </footer>   
+</body>
+
+</html>

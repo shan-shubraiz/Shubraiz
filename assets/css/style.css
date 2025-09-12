@@ -378,6 +378,49 @@ section {
 }
 
 
+/* CSS */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* adjusts columns automatically */
+  gap: 10px; /* space between images */
+  padding: 10px;
+}
+
+.image-item {
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;        /* scale to fit the grid column */
+  height: 250px;      
+  object-fit:contain;  /* crop to fit without stretching */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;     
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Smaller screens */
+@media (max-width: 500px) {
+  .image-item img {
+    height: 180px;    /* reduces height for small screens */
+  }
+}
+
+@media (max-width: 320px) {
+  .image-item img {
+    height: 150px;    /* further reduces height for very small screens */
+  }
+}
+
+
 /* ==============================
    CODE BLOCKS
    ============================== */
