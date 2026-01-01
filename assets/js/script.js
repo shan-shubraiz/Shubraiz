@@ -6,22 +6,112 @@ function scrollToSection(id) {
   }
 }
 
-// Contact form interactivity
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.getElementById('form-message').textContent = 'Thank you for reaching out! I will get back to you soon.';
-    form.reset();
-  });
-}
-
-// Responsive nav (for mobile)
+// Responsive nav (for mobile), modals, forms
 document.addEventListener('DOMContentLoaded', function() {
-  const nav = document.querySelector('nav ul');
-  const logo = document.querySelector('.logo');
-  logo.addEventListener('click', function() {
-    nav.classList.toggle('active');
+  // Hamburger toggle
+  document.querySelectorAll('.hamburger-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  });
+
+  // Scroll to about
+  document.querySelectorAll('.scroll-to-about').forEach(btn => {
+    btn.addEventListener('click', () => {
+      scrollToSection('about-section');
+    });
+  });
+
+  // Modal close buttons
+  document.querySelectorAll('.modal-close-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) modal.style.display = 'none';
+    });
+  });
+
+  // Modal background click to close
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  });
+
+  // Resume request button
+  const resumeBtn = document.getElementById('resumeRequestBtn');
+  if (resumeBtn) {
+    resumeBtn.addEventListener('click', () => {
+      document.getElementById('resumeModal').style.display = 'flex';
+    });
+  }
+
+  // Contact form
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      fetch('https://formspree.io/f/xrblwlnb', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('thankYouModal').style.display = 'flex';
+          contactForm.reset();
+        } else {
+          response.json().then(data => {
+            alert(data.error || 'There was a problem submitting your message.');
+          });
+        }
+      })
+      .catch(() => {
+        alert('There was a problem submitting your message.');
+      });
+    });
+  }
+
+  // Copy code functionality
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const codeId = this.getAttribute('data-code-id');
+      if (codeId) {
+        const codeElement = document.getElementById(codeId);
+        if (codeElement) {
+          const text = codeElement.textContent;
+          navigator.clipboard.writeText(text).then(() => {
+            // Optional: Show feedback
+            const originalText = this.textContent;
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+              this.textContent = originalText;
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+        }
+      }
+    });
+  });
+
+  // Download image functionality
+  document.querySelectorAll('.download-image-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const imgId = this.getAttribute('data-img-id');
+      if (imgId) {
+        const img = document.getElementById(imgId);
+        if (img) {
+          const link = document.createElement('a');
+          link.href = img.src;
+          link.download = img.alt || 'image.png';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      }
+    });
   });
 })
 
