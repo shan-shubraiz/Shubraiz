@@ -18,7 +18,11 @@ This website is hosted on **GitHub Pages**.
      - **BLAST using CMD**
 
 3. **Blogs**  
+   - **Introduction to Bioinformatics** – An informative blog about Bioinformatics and its applications.
    - **Introduction to BLAST** – An informative blog about BLAST and its applications.
+   - **Machine Learning in Bioinformatics** – An informative blog about Machine learning applications in bioinformatics.
+
+
 
 4. **About Me**  
    Short introduction with a button to request/download my resume.
@@ -40,4 +44,5 @@ This website is hosted on **GitHub Pages**.
 1. Clone this repository:
    ```bash
    git clone https://github.com/shan-shubraiz/Shubraiz
+
 
